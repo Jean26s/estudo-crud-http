@@ -1,0 +1,67 @@
+<form *ngIf="!notFound; else notFoundContainer" [formGroup]="form" (ngSubmit)="onSubmit()" class="container my-5" >
+    <h3>Editar tarefa</h3>
+    <hr />
+    <div class="mb-3">
+        <label for="titulo" class="form-label">Título</label>
+        <input
+        formControlName="titulo"
+    
+        type="text"
+    
+        class="form-control "
+    
+        id="titulo"
+    
+        />
+    
+    </div>
+    
+    <div class="mb-3">
+    
+        <label for="descricao" class="form-label">Descrição</label>
+    
+        <input
+    
+        formControlName="descricao"
+    
+        type="text"
+    
+        class="form-control "
+    
+        id="descricao"
+    
+        />
+    
+    </div>
+    
+    <div class="mb-3 form-check ">
+    
+        <input
+    
+        formControlName="concluida"
+    
+        type="checkbox"
+    
+        class="form-check-input "
+    
+        id="concluida"
+    
+        />
+    
+        <label class="form-check-label" for="concluida">Concluída?</label>
+    
+    </div>
+    
+    <button [disabled]="form.invalid" type="submit" class="btn btn-primary ">
+    
+        Editar
+    
+    </button>
+    
+     
+    
+    </form>
+
+    <ng-template #notFoundContainer>
+   <h5>Tarefa nao encontrada</h5>
+    </ng-template>
